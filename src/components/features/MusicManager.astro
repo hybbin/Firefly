@@ -379,7 +379,7 @@ const managerConfigStr = JSON.stringify({
                     isMuted: state.isMuted
                 });
 
-                loadTrack(startIndex, false);
+                loadTrack(startIndex, true);
             } else {
                 state.initialized = true;
                 emit('fm:init', {
