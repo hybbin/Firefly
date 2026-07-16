@@ -3,7 +3,8 @@ title: 从零搭建 Firefly 博客：一次愉快的技术选型实践
 published: 2026-07-14
 description: 记录一次完整的 Astro 静态博客搭建体验——从 fork 主题、EdgeOne Pages 部署到 GitHub 自动化维护，分享给想搭个人博客的朋友们。
 tags: [Firefly, Astro, 博客, 前端, 部署, EdgeOne]
-category: 博客指南
+category: 技术分享
+image: ./images/firefly1.avif
 ---
 
 ## 缘起
@@ -151,5 +152,6 @@ git push
 
 ---
 
-> 📝 本文由 AI 助手（白糖）协作编写，记录真实搭建体验与维护心得。
+> 📝 本文由 AI 助手协作编写，记录真实搭建体验与维护心得。
+
 > *最后更新：2026-07-14*
