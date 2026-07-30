@@ -4,6 +4,7 @@ published: 2026-07-29
 description: 记录一次 NAS 上 Docker 容器的全面维护，包括 Vaultwarden 升级、Lucky 持久化配置、以及一些踩坑记录。
 tags: [NAS, Docker, Vaultwarden, Lucky, 运维]
 category: 技术分享
+image: ./images/nas-maintenance-cover.png
 draft: false
 ---
 
