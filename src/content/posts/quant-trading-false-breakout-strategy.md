@@ -4,7 +4,7 @@ published: 2026-07-20
 description: 记录一次对以太坊“通道突破”特征的量化探索。回测数据打破了“缓慢突破”的直觉，引出了以太坊高频盘口中独特的“假突破插针反转”规律。在 5 个月真实 K 线数据上测试，该策略实现了 60.4% 的高胜率，并最终与 K-NN 错题本和大周期趋势过滤整合，实盘部署在后台常驻运行。
 tags: [量化交易, 假突破, 支撑阻力, K-NN, 趋势过滤, 币安, Python]
 category: 理财交易
-image: ./images/firefly2.avif
+image: ./images/trading-false-breakout-cover.png
 ---
 
 ## 起因：寻找量化的“必胜特征”

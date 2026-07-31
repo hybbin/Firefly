@@ -4,7 +4,7 @@ published: 2026-07-14
 description: 记录一次在 NAS 上用青龙面板部署币安二元期权策略的实践。从策略思路、回测验证到自动化部署，分享一个业余量化玩家的折腾历程。
 tags: [量化交易, 策略, 青龙面板, 币安, 均值回归, Python]
 category: 理财交易
-image: ./images/firefly2.avif
+image: ./images/trading-qinglong-cover.png
 ---
 
 ## 起因
