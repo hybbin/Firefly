@@ -4,7 +4,7 @@ published: 2026-07-15
 description: 从 40% 填充率规范到逐级公式计算，从快捷估算表到行业避坑经验，一篇讲透弱电桥架尺寸的标准化设计方法。
 tags: [弱电智能化, 桥架, 综合布线, 施工图, 设计规范, GB50311]
 category: 工作心得
-image: ./images/cable-tray-cover.png
+image: ./images/cable-tray-cover.avif
 ---
 
 在弱电智能化设计中，网线桥架尺寸的计算是方案深化和出图的必修课。桥架定小了，施工队拉线时会卡死、发热甚至被验收拒收；定大了，总包和审计又会提造价核减。

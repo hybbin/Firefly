@@ -4,7 +4,7 @@ published: 2026-07-14
 description: 记录一次完整的 Astro 静态博客搭建体验——从 fork 主题、EdgeOne Pages 部署到 GitHub 自动化维护，分享给想搭个人博客的朋友们。
 tags: [Firefly, Astro, 博客, 前端, 部署, EdgeOne]
 category: 技术分享
-image: ./images/blog-setup-cover.png
+image: ./images/blog-setup-cover.avif
 ---
 
 ## 缘起
