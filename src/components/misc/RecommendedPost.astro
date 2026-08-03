@@ -148,7 +148,7 @@ function renderRandomPosts() {
     container.className = 'flex-1';
 
     var fragment = document.createDocumentFragment();
-    var base = apiUrl.replace(/\/api\/allPostMeta\.json$/, '');
+    var base = apiUrl.replace(/\/api\/allPostMeta\.json(\?v=\d+)?$/, '');
 
     picked.forEach(function(post, idx) {
       var href = base + '/posts/' + post.id + '/';
