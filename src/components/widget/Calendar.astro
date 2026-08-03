@@ -54,7 +54,10 @@ const heatmapWeekTemplate = i18n(I18nKey.calendarHeatmapWeek);
 // 获取当前语言
 const currentLang = siteConfig.lang || "en";
 
-const calendarDataUrl = url("/api/allPostMeta.json");
+// 缓存版本号，删除文章时递增此数字，确保 CDN 缓存刷新
+const BUILD_VERSION = "1";
+
+const calendarDataUrl = url("/api/allPostMeta.json") + "?v=" + BUILD_VERSION;
 const postUrlPrefix = url("/posts/");
 ---
 

@@ -12,7 +12,11 @@ interface Props {
 }
 
 const { relatedPosts, currentPostId } = Astro.props;
-const apiUrl = url("/api/allPostMeta.json");
+
+// 缓存版本号，删除文章时递增此数字，确保 CDN 缓存刷新
+const BUILD_VERSION = "1";
+
+const apiUrl = url("/api/allPostMeta.json") + "?v=" + BUILD_VERSION;
 const relatedIds = JSON.stringify(relatedPosts.map((p) => p.id));
 const noRelatedPostsText = i18n(I18nKey.noRelatedPosts);
 const noRandomPostsText = i18n(I18nKey.noRandomPosts);
