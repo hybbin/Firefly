@@ -34,6 +34,14 @@ export const galleryConfig: GalleryConfig = {
 			password: "123456",
 			passwordHint: "示例密码123456",
 		},
+		{
+			id: "silver-garden",
+			name: "银白花园",
+			description: "银发如雪，冰蓝眼眸，在阳光花房里绽放的优雅。",
+			location: "AI 生成",
+			date: "2026-08-04",
+			tags: ["AI绘图", "银发", "JK", "梦幻"],
+		},
 	],
 
 	// 瀑布流最小列宽(px)，浏览器根据容器宽度自动计算列数，默认 240
