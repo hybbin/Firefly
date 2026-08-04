@@ -6,7 +6,7 @@ export const commentConfig: CommentConfig = {
 
 	//twikoo评论系统配置
 	twikoo: {
-		envId: "http://192.168.86.114:8080",
+		envId: "https://twikoo.hybin.cn",
 		// 设置 Twikoo 评论系统语言
 		lang: "zh-CN",
 		// 是否启用文章访问量统计功能
