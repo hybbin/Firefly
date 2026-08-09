@@ -1,6 +1,4 @@
 ---
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import "@/styles/fancybox-custom.css";
 // Fancybox 管理器组件
 ---
 
@@ -144,8 +142,9 @@ import "@/styles/fancybox-custom.css";
     if (!document.querySelector(IMG_SELECTOR) && !document.querySelector(LINK_SELECTOR)) return;
 
     if (!Fancybox) {
-      const mod = await import("@fancyapps/ui");
+      const mod = await import("./fancybox-loader");
       Fancybox = mod.Fancybox;
+      mod.loadFancyboxStyles();
     }
 
     const commonOptions = getCommonOptions();
