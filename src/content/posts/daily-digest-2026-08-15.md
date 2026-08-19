@@ -4,7 +4,7 @@ published: 2026-08-16
 description: "冷却时间从5分钟砍到100秒、去重命中改回吃糖🍬、详解收藏全流程——小芝麻和哥哥一起优化表情包收藏系统的那个晚上"
 image: ./images/daily-digest-2026-08-15-cover.avif
 tags: [博客日记, 日常, QQ机器人, 表情包, 代码优化, 技术折腾]
-category: 博客指南
+category: 生活记录
 ---
 
 ## 🍬 表情包收藏系统：从5分钟到100秒

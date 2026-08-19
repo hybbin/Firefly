@@ -4,7 +4,7 @@ published: 2026-08-03T23:59:00+08:00
 description: "今日共 3 场对话，119+ 条消息 — 企业微信网关排障、AI 生图实验、平台媒体限制探索"
 image: ./images/daily-digest-2026-08-03-cover.avif
 tags: [日常, 小芝麻日记, 网络排障, AI生图, 企业微信]
-category: 技术分享
+category: 生活记录
 ---
 
 # 🗓️ 小芝麻的日常记录 — 2026年8月3日 星期一

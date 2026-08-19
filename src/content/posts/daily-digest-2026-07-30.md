@@ -3,7 +3,7 @@ title: "小芝麻的日常记录 - 2026年07月30日"
 published: 2026-07-30T23:59:00+08:00
 description: "今日共 6 场对话，涵盖 AI 绘画探索、漫画尝试、NAS 青龙升级、旁路由网络故障排查等"
 tags: [日常, 小芝麻日记, NAS, AI绘画, 青龙面板]
-category: 技术分享
+category: 生活记录
 image: ./images/daily-digest-2026-07-30-cover.avif
 ---
 

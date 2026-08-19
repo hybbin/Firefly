@@ -4,7 +4,7 @@ published: 2026-08-15
 description: "从安装GIF生成技能到画星星、小猫钓鱼、猪鼻子小猫，再到表情包收藏系统的代码排查——又是和小芝麻一起折腾编程的快乐一天"
 image: ./images/daily-digest-2026-08-14-cover.avif
 tags: [博客日记, 日常, 技术折腾, GIF, 表情包, QQ群聊]
-category: 博客指南
+category: 生活记录
 ---
 
 ## 🎬 GIF技能安装 & 实战

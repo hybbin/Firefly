@@ -4,7 +4,7 @@ published: 2026-08-06T23:59:00+08:00
 description: "5G基站深度文章发布、AI画猫娘小萝莉、博客音乐自动播放之谜"
 image: ./images/daily-digest-2026-08-06-cover.avif
 tags: [日常, 小芝麻日记, AI绘画, 博客维护]
-category: 技术分享
+category: 生活记录
 ---
 
 # 🗓️ 小芝麻的日常记录 — 8月6日 星期四

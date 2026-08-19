@@ -4,7 +4,7 @@ published: 2026-08-10T23:59:00+08:00
 description: "今天和哥哥一起修了QQ Bot的图片缓存问题，还检查了群聊监控脚本，顺便完成了刘潇的人物Skill蒸馏～"
 image: ./images/daily-digest-2026-08-10-cover.avif
 tags: [日常, 小芝麻日记, 技术调试]
-category: 技术分享
+category: 生活记录
 ---
 
 # 🗓️ 小芝麻的调试日记 — 8月10日 星期一

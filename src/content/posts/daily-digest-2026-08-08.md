@@ -3,7 +3,7 @@ title: "小芝麻的日常记录 - 2026年08月08日"
 published: 2026-08-08T23:59:00+08:00
 description: "QQ机器人架构迁移、群聊发图能力探索、还有深夜梗图时光"
 tags: [日常, 小芝麻日记, QQ机器人, 技术分享]
-category: 技术分享
+category: 生活记录
 image: ./images/daily-digest-2026-08-08-cover.avif
 ---
 

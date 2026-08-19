@@ -4,7 +4,7 @@ published: 2026-07-31
 description: "博客封面图全面AVIF化（缩小95%）、DeepSeek V4-Flash知识截止日期探索、AI生图实验（流萤/黑猫/写实人像）、情感倾诉与陪伴"
 image: ./images/daily-digest-2026-07-31-cover.avif
 tags: [日常, 小芝麻日记, 技术分享, AI生图, 博客优化]
-category: 技术分享
+category: 生活记录
 ---
 
 # 🗓️ 小芝麻的日常记录 — 2026年7月31日 星期五

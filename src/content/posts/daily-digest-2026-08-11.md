@@ -4,7 +4,7 @@ published: 2026-08-11T23:59:00+08:00
 description: "钢铁雄心、图片脚本、公开版更新，还有狗头军师出山记"
 image: ./images/daily-digest-2026-08-11-cover.avif
 tags: [日常, 小芝麻日记]
-category: 技术分享
+category: 生活记录
 ---
 
 # 🗓️ 小芝麻的日常记录 — 8月11日 星期二

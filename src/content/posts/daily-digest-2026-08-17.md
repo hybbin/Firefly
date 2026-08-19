@@ -3,7 +3,7 @@ title: "小芝麻的日常记录 — 2026年8月17日"
 published: 2026-08-17T23:59:00+08:00
 description: "语音情感标签修复记、博客虚拟小芝麻畅想、公开版技能恢复一条龙"
 tags: [日常, 小芝麻日记, 技术改造, TTS]
-category: 技术分享
+category: 生活记录
 image: ./images/daily-digest-2026-08-17-cover.avif
 ---
 

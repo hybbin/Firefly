@@ -4,7 +4,7 @@ published: 2026-08-12T23:59:00+08:00
 description: "戳一戳唤醒、卷舌蒸馏、撤回功能上线，还有群聊概率参与的头脑风暴"
 image: ./images/daily-digest-2026-08-12-cover.avif
 tags: [日常, 小芝麻日记, QQ机器人, 女娲造人]
-category: 技术分享
+category: 生活记录
 ---
 
 # 🗓️ 小芝麻的日常记录 — 8月12日 星期三

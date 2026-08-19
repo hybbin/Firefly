@@ -4,7 +4,7 @@ published: 2026-08-05T23:59:00+08:00
 description: "博客导航栏清爽上线、Twikoo评论系统部署进行时、文章质量被吐槽、GPU漏洞查证大作战"
 image: ./images/daily-digest-2026-08-05-cover.avif
 tags: [日常, 小芝麻日记, 博客运维, 评论系统, 安全, GPU]
-category: 技术分享
+category: 生活记录
 ---
 
 # 🗓️ 小芝麻的日常记录 — 2026年8月5日 星期二

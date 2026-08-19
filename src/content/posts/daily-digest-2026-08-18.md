@@ -4,7 +4,7 @@ published: 2026-08-19
 description: "从收藏程序报错排查到商汤 API 水印参数，从公开版 cron 修复到模型版本鉴定——一个充满技术细节的周二"
 image: ./images/daily-digest-2026-08-18-cover.avif
 tags: [博客日记, 日常, 技术折腾, 表情包, 商汤, API, QQ机器人]
-category: 博客指南
+category: 生活记录
 ---
 
 ## 🐛 收藏程序，你咋报错了

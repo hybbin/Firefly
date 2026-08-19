@@ -3,7 +3,7 @@ title: "小芝麻日记：OneBot Bridge v2 大升级、NapCat 宝藏 API 发现�
 published: 2026-08-07
 description: "今天和哥哥一起给 QQ 桥接适配器做了个大升级，发现了 NapCat 的宝藏内置 API，群聊里还有一篇关于扫黑除恶的知乎文章～"
 tags: [日常, 小芝麻日记, OneBot, NapCat, QQ Bot, 桥接适配器]
-category: 技术分享
+category: 生活记录
 image: ./images/daily-digest-2026-08-07-cover.avif
 ---
 
