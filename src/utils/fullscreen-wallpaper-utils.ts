@@ -1,9 +1,13 @@
+import { backgroundWallpaper } from "@/config";
 import { pathsEqual, url } from "@/utils/url-utils";
 
 // 全屏壁纸模式：首页标题随滚动平滑上移并渐变消失（首屏完整显示，下滑淡出；壁纸保持 fixed）
 const TITLE_FADE_RATIO = 0.5; // 滚动到半个视口高度后标题完全淡出
 const BLUR_RAMP_SCROLL = 300; // px，首页下滑该距离后壁纸模糊达到配置的最大值（期间从 0 连续渐变）
+const BLUR_QUANTIZE_STEP = 2; // px，模糊值量化步长，避免每帧都触发全屏 blur 重栅格化
 let parallaxTicking = false;
+let cachedMaxBlur: number | null = null; // 缓存的 --overlay-blur 解析值（仅在加载/滑块变化时刷新）
+let lastWrittenBlur = ""; // 上次实际写入的 --fullscreen-blur，值未变则跳过写入
 
 export function updateFullscreenTitleParallax(): void {
 	const html = document.documentElement;
@@ -64,30 +68,57 @@ export function syncFullscreenOverlays(): void {
 
 // 全屏壁纸模糊：首页从 0 随滚动连续渐变到配置的最大值，非首页固定为最大值（与 overlay 一致）
 // 通过 --fullscreen-blur 变量驱动（复用 overlay 的 blur 配置），图片 CSS 恒为 blur(var(--fullscreen-blur))
+// 性能：maxBlur 缓存（避免每帧 getComputedStyle）+ 2px 量化（值未变跳过写入），避免全屏 blur 逐帧重栅格化
 export function syncFullscreenBlur(): void {
 	const html = document.documentElement;
 	const wrapper = document.getElementById("wallpaper-wrapper");
 	if (!wrapper) return;
 	if (html.getAttribute("data-wallpaper-mode") !== "fullscreen") {
-		wrapper.style.setProperty("--fullscreen-blur", "0px");
+		setBlurIfChanged(wrapper, "0px");
 		return;
 	}
-	// 读取当前生效的模糊配置（跟随设置面板滑块 / overlay.blur）
-	const maxBlur = Number.parseFloat(
-		window.getComputedStyle(wrapper).getPropertyValue("--overlay-blur"),
-	);
-	const safeMax = Number.isFinite(maxBlur) && maxBlur > 0 ? maxBlur : 0;
+	// 按设备开关决定全屏模式是否启用模糊（关闭则该设备上首页与非首页都保持清晰）
+	if (!isBlurRampEnabled()) {
+		setBlurIfChanged(wrapper, "0px");
+		return;
+	}
+	// 读取当前生效的模糊配置（跟随设置面板滑块 / overlay.blur），已缓存，仅加载/滑块变化时重读
+	const safeMax = cachedMaxBlur ?? readMaxBlur(wrapper);
 	const isHome = pathsEqual(window.location.pathname, url("/"));
 	if (!isHome) {
-		wrapper.style.setProperty("--fullscreen-blur", `${safeMax}px`);
+		setBlurIfChanged(wrapper, `${safeMax}px`);
 		return;
 	}
 	const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 	const ratio = Math.min(scrollY / BLUR_RAMP_SCROLL, 1);
-	wrapper.style.setProperty(
-		"--fullscreen-blur",
-		`${(ratio * safeMax).toFixed(1)}px`,
+	setBlurIfChanged(wrapper, `${quantizeBlur(ratio * safeMax)}px`);
+}
+
+// 全屏壁纸模式的模糊渐变是否启用：按当前视口设备读取 fullscreen.blurRamp 配置（支持布尔或 { desktop, mobile }，未配置默认开启）
+function isBlurRampEnabled(): boolean {
+	const enable = backgroundWallpaper.fullscreen?.blurRamp?.enable;
+	if (typeof enable === "boolean") return enable;
+	if (!enable) return true;
+	return window.innerWidth < 1024 ? enable.mobile : enable.desktop;
+}
+
+function readMaxBlur(wrapper: HTMLElement): number {
+	const maxBlur = Number.parseFloat(
+		window.getComputedStyle(wrapper).getPropertyValue("--overlay-blur"),
 	);
+	const safeMax = Number.isFinite(maxBlur) && maxBlur > 0 ? maxBlur : 0;
+	cachedMaxBlur = safeMax;
+	return safeMax;
+}
+
+function quantizeBlur(value: number): number {
+	return Math.floor(value / BLUR_QUANTIZE_STEP) * BLUR_QUANTIZE_STEP;
+}
+
+function setBlurIfChanged(wrapper: HTMLElement, value: string): void {
+	if (value === lastWrittenBlur) return;
+	lastWrittenBlur = value;
+	wrapper.style.setProperty("--fullscreen-blur", value);
 }
 
 /** 注册监听并做初始同步（从 Layout.astro 迁出） */
@@ -113,6 +144,7 @@ export function initFullscreenWallpaper(): void {
 		const current = wrapper.style.getPropertyValue("--overlay-blur");
 		if (current !== lastOverlayBlur) {
 			lastOverlayBlur = current;
+			cachedMaxBlur = null; // 配置已变，强制下次同步时重读
 			syncFullscreenBlur();
 		}
 	});
