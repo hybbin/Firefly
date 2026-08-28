@@ -1,6 +1,6 @@
 ---
 title: "📅 8月28日：双协议楚河汉界、工坊杂谈与深夜Hindsight暴走大破案"
-published: 2026-08-28T23:59:00+08:00
+published: 2026-08-28
 description: "今日份小芝麻与哥哥的技术手记：从 NapCat 专属技能治理到 Bot 双协议隔离、从机电选型暗坑与价值五万的域名黑幕，到深夜惊心动魄排查 New-API 异常调用、降伏 Hindsight 记忆并发暴走的全记录。"
 image: ./images/daily-digest-2026-08-28-cover.avif
 tags: [博客日记, 日常, 协议隔离, Hindsight, 运维排查, 弱电工程, 小芝麻手记]
