@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config/siteConfig";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import type { PostForList } from "@/utils/content-utils";
@@ -9,9 +10,16 @@ import { getPostUrlBySlug, url } from "@/utils/url-utils";
 interface Props {
 	relatedPosts: PostForList[];
 	currentPostId: string;
+	showRelatedPosts?: boolean;
+	showRandomPosts?: boolean;
 }
 
-const { relatedPosts, currentPostId } = Astro.props;
+const {
+	relatedPosts,
+	currentPostId,
+	showRelatedPosts = siteConfig.post.relatedPosts,
+	showRandomPosts = siteConfig.post.randomPosts,
+} = Astro.props;
 
 // 缓存版本号，删除文章时递增此数字，确保 CDN 缓存刷新
 const BUILD_VERSION = "1";
@@ -22,8 +30,12 @@ const noRelatedPostsText = i18n(I18nKey.noRelatedPosts);
 const noRandomPostsText = i18n(I18nKey.noRandomPosts);
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class:list={[
+  "grid grid-cols-1 gap-4 mb-4",
+  showRelatedPosts && showRandomPosts && "md:grid-cols-2",
+]}>
   {/* 左栏：相关文章（静态） */}
+  {showRelatedPosts && (
   <div class="card-base p-5 md:p-6 flex flex-col">
     <div class="flex items-center gap-2 pb-3 mb-1 border-b border-(--line-divider)">
       <Icon
@@ -76,8 +88,10 @@ const noRandomPostsText = i18n(I18nKey.noRandomPosts);
       </div>
     )}
   </div>
+  )}
 
   {/* 右栏：随机文章（客户端 fetch 渲染） */}
+  {showRandomPosts && (
   <div class="card-base p-5 md:p-6 flex flex-col">
     <div class="flex items-center gap-2 pb-3 mb-1 border-b border-(--line-divider)">
       <Icon
@@ -104,8 +118,10 @@ const noRandomPostsText = i18n(I18nKey.noRandomPosts);
       </div>
     </div>
   </div>
+  )}
 </div>
 
+{showRandomPosts && (
 <script is:inline>
 function renderRandomPosts() {
   var container = document.getElementById('random-posts-list');
@@ -226,3 +242,4 @@ if (!window.__recommendedPostInit) {
   document.addEventListener('swup:contentReplaced', renderRandomPosts);
 }
 </script>
+)}
